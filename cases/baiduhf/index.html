@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style tyle="text/css">
+	*{margin:0px;padding:0px;}
+	body{background:url("images/bg.jpg");}
+	.button{
+		width:36px;height:57px;position:fixed;left:20px;top:0px;cursor:pointer;
+		background:url("images/button.png");
+		}
+	.web{width:1232px;height:72px;margin:0px auto;display:none;}
+	ul{		width:1122px;height:72px;
+			margin:0 auto;
+			overflow:hidden;float:left;
+	 }
+	.left{
+		width:55px;height:72px;background:url("images/left_jt.png");
+		float:left;
+		}
+	.right{
+		width:55px;height:72px;background:url("images/right_jt.png");
+		float:right;
+		}
+ ul li{width:158px;height:68px;border:2px solid #fff;border-right:none;
+		list-style-type:none;
+		float:left;position:relative;
+		cursor:pointer;		
+			  }
+ ul li img{width:158px;height:68px;}
+ ul li p{width:158px;height:68px;background:#0099ff;
+		position:absolute;bottom:0px;left:0px;
+		opacity:0.6;
+				  }
+  </style>
+ </head>
+ <body>
+  <div class="button"></div>
+  <div class="web">
+	<div class="left"></div>
+	<ul>
+		<li>
+			<img src="images/0.jpg" />
+			<p></p>
+		</li>
+		<li>
+			<img src="images/1.jpg" />
+			<p></p>
+		</li>
+		<li>
+			<img src="images/2.jpg" />
+			<p></p>
+		</li>
+		<li>
+			<img src="images/3.jpg" />
+			<p></p>
+		</li>
+		<li>
+			<img src="images/4.jpg" />
+			<p></p>
+		</li>
+		<li>
+			<img src="images/5.jpg" />
+			<p></p>
+		</li>
+		<li class="last">
+			<img src="images/6.jpg" />
+			<p></p>
+		</li>
+	</ul>
+	<div class="right"></div>
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript">
+	$('ul li').hover(function(){
+		
+		$(this).children("p").stop().animate({bottom:"-74px"},300);
+	},function(){
+		$(this).children("p").stop().animate({bottom:"0px"},300);
+	})
+
+	$('.button').click(function(){
+	 $(this).fadeOut(100);
+	 $('.web').fadeIn(2000);
+
+	})
+
+	$('ul li').click(function(){
+			var i=$(this).index();
+			$('body').css("background",'url(images/'+i+'.jpg)');
+	})
+	
+  </script>
+ </body>
+</html>
